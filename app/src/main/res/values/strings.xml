@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chuck Norris Jokes</string>
+    <string name="category">Category</string>
+    <string name="retry">Retry</string>
+    <string name="joke_icon_cont_description">Joke icon</string>
+    <string name="error">"Error: "</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/categoryFragment">
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.jss.chucknorrisjokes.presentation.fragment.JokesCategoryFragment"
+        android:label="fragment_category_list"
+        tools:layout="@layout/fragment_jokes_category_list" >
+        <action
+            android:id="@+id/action_categoryFragment_to_randomJokeFragment"
+            app:destination="@id/randomJokeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomJokeFragment"
+        android:name="com.jss.chucknorrisjokes.presentation.fragment.RandomJokeFragment"
+        android:label="fragment_random_joke"
+        tools:layout="@layout/fragment_random_joke" >
+        <argument
+            android:name="category"
+            app:argType="com.jss.chucknorrisjokes.core.entity.Category" />
+    </fragment>
+</navigation>
