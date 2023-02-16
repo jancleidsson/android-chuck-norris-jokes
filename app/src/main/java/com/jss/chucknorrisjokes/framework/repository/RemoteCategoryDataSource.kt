@@ -9,7 +9,13 @@ import java.util.*
 class RemoteCategoryDataSource(private val chuckNorrisIOService: ChuckNorrisIOService) :
     CategoryDataSource {
     override fun getAll(): Observable<List<Category>> =
-        chuckNorrisIOService.getCategories().map {
-            it.map { category -> Category(category.capitalize(Locale.getDefault())) }
+        chuckNorrisIOService.getCategories().map { categoryName ->
+            categoryName.map { category ->
+                Category(category.replaceFirstChar { firstChar ->
+                    if (firstChar.isLowerCase()) firstChar.titlecase(
+                        Locale.getDefault()
+                    ) else firstChar.toString()
+                })
+            }
         }
 }

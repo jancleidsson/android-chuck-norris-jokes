@@ -1,16 +1,12 @@
 package com.jss.chucknorrisjokes.framework.di
 
 import android.app.Application
-import android.content.Context
-import com.jss.chucknorrisjokes.framework.db.DatabaseService
 import com.jss.chucknorrisjokes.util.ServiceLocator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 
 @Module
 @InstallIn(ViewModelComponent::class)

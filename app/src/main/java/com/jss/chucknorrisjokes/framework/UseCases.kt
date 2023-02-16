@@ -9,5 +9,4 @@ class UseCases @Inject constructor(
         val addFavoriteJoke: AddFavoriteJoke,
         val removeFavoriteJoke: RemoveFavoriteJoke,
         val getFavoriteJoke: GetFavoriteJoke
-        ) {
-}
+        )

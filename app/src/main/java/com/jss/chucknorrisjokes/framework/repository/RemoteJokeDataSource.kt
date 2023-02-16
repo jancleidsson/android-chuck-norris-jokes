@@ -7,7 +7,7 @@ import java.util.*
 
 class RemoteJokeDataSource(private val chuckNorrisIOService: ChuckNorrisIOService) : JokeDataSource {
     override fun getRandom(category: Category) = chuckNorrisIOService.randomJoke(
-        category.name.decapitalize(Locale.getDefault()))
+        category.name.replaceFirstChar { it.lowercase(Locale.getDefault()) })
 }
 
 

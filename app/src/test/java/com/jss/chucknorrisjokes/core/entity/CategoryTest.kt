@@ -8,7 +8,7 @@ class CategoryTest {
 
     @Test
     fun validateCategoryScheme() {
-        val category = Category("teste")
+        val category = Category("test")
         assertThat(category.name, Matchers.isA(String::class.java))
     }
 }

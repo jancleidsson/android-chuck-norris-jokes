@@ -20,8 +20,8 @@ class ChuckNorrisJokesViewModel @Inject constructor(
     application: Application,
     private val useCases: UseCases,
 ) : AndroidViewModel(application) {
-    val categoriesList = MutableLiveData<List<Category>>()
-    val randomJoke = MutableLiveData<Joke>()
+    val categoriesList = MutableLiveData<List<Category>?>()
+    val randomJoke = MutableLiveData<Joke?>()
     val isFavoriteJoke = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
     val error = MutableLiveData<Throwable>()

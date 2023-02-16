@@ -7,10 +7,6 @@ import com.jss.chucknorrisjokes.core.entity.Category
 import com.jss.chucknorrisjokes.core.entity.Joke
 import com.jss.chucknorrisjokes.core.usecase.*
 import com.jss.chucknorrisjokes.framework.UseCases
-import io.mockk.every
-import io.mockk.mockkConstructor
-import io.mockk.mockkObject
-import io.mockk.verify
 import io.reactivex.rxjava3.android.plugins.RxAndroidPlugins
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -22,7 +18,6 @@ import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -71,10 +66,10 @@ class ChuckNorrisJokesViewModelTest : TestCase() {
     private lateinit var observerLoading: Observer<in Boolean>
 
     @Mock
-    private lateinit var observerCategories: Observer<in List<Category>>
+    private lateinit var observerCategories: Observer<in List<Category>?>
 
     @Mock
-    private lateinit var observerRandomJoke: Observer<in Joke>
+    private lateinit var observerRandomJoke: Observer<in Joke?>
 
     @Mock
     private lateinit var observerIsFavoriteJoke: Observer<in Boolean>

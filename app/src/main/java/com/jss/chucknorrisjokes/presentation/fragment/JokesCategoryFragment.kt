@@ -63,26 +63,26 @@ class JokesCategoryFragment : Fragment() {
     }
 
     private fun observerViewModel() {
-        mChuckNorrisJokesViewModel.categoriesList.observe(viewLifecycleOwner, { categories ->
-            if (categories != null && categories == cars) {
+        mChuckNorrisJokesViewModel.categoriesList.observe(viewLifecycleOwner) { categories ->
+            if (categories != null) {
                 mBinding.retryButton.visibility = View.INVISIBLE
                 mCategoryAdapter.updateCategories(categories)
             }
-        })
+        }
 
-        mChuckNorrisJokesViewModel.loading.observe(viewLifecycleOwner, { loading ->
+        mChuckNorrisJokesViewModel.loading.observe(viewLifecycleOwner) { loading ->
             mBinding.loading.isVisible = loading
             mBinding.categoryList.isVisible = loading.not()
-        })
+        }
 
-        mChuckNorrisJokesViewModel.error.observe(viewLifecycleOwner, { error ->
+        mChuckNorrisJokesViewModel.error.observe(viewLifecycleOwner) { error ->
             mBinding.retryButton.visibility = View.VISIBLE
             Toast.makeText(
                 context,
                 getString(R.string.error).plus(error.message),
                 Toast.LENGTH_LONG
             ).show()
-        })
+        }
     }
 
     private fun goToRandomJoke(category: Category) {

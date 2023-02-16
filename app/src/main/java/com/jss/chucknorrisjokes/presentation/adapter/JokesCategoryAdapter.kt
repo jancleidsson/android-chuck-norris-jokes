@@ -1,5 +1,6 @@
 package com.jss.chucknorrisjokes.presentation.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ class JokesCategoryAdapter(private val onCategoryClicked: (Category) -> Unit) : 
 
     override fun getItemCount(): Int = categories.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateCategories(categoriesData: List<Category>) {
         categories.clear()
         categories.addAll(categoriesData)

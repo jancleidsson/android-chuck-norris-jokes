@@ -1,6 +1,7 @@
 package com.jss.chucknorrisjokes.presentation.fragment
 
 import android.content.Context
+import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.rules.activityScenarioRule
@@ -38,7 +39,7 @@ class JokesCategoryFragmentTest : TestCase() {
 
     @Test
     fun jokesCategoryFragment_progressDisplayed_onAppLaunch() {
-//        val scenario = launchFragmentInContainer<JokesCategoryFragment>()
+        launchFragmentInContainer<JokesCategoryFragment>()
         activityScenarioRule.scenario.recreate()
         Thread.sleep(10000)
     }
